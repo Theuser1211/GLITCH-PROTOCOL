@@ -3,10 +3,6 @@ class MenuScene extends Phaser.Scene {
     super("MenuScene");
   }
 
-  preload() {
-    this.load.image("logo", "logo.jpg");
-  }
-
   create() {
     window.__currentScene = this;
     this.startLatch = false;
@@ -24,7 +20,16 @@ class MenuScene extends Phaser.Scene {
     this.g.lineStyle(3, 0x0aff5a);
     this.g.strokeRect(106, 64, 428, 210);
 
-    this.add.image(320, 146, "logo").setDisplaySize(490, 310).setAlpha(0.98);
+    this.add.text(146, 94, "GLITCH://PROTOCOL", {
+      fontFamily: "monospace",
+      fontSize: "28px",
+      color: "#9cff9c"
+    });
+    this.add.text(180, 132, "SYSTEM ONLINE", {
+      fontFamily: "monospace",
+      fontSize: "12px",
+      color: "#5cff5c"
+    });
 
     const newGame = this.add.text(220, 184, "[NEW GAME]", {
       fontFamily: "monospace",
